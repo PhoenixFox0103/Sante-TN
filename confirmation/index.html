@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>PharmaLink Pharmacie</title>
+
+    styles.css
+
+    https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2script>
+    app.jsscript>
+</head>
+
+<body>
+
+<header class="main-header">
+
+    <div class="brand">
+        <span class="brand-icon">+</span>
+
+        <span>PharmaLink</span>
+
+        <strong>PHARMACIE</strong>
+    </div>
+
+    <button
+        id="logout"
+        type="button"
+        class="btn secondary hidden"
+    >
+        Déconnexion
+    </button>
+
+</header>
+
+<main>
+
+    <!-- ================================================== -->
+    <!-- AUTHENTIFICATION -->
+    <!-- ================================================== -->
+
+    <section id="login" class="container">
+
+        <div class="card login-box">
+
+            <div class="auth-choice">
+
+                <button
+                    id="loginTab"
+                    type="button"
+                    class="btn auth-tab active"
+                >
+                    Se connecter
+                </button>
+
+                <button
+                    id="signupTab"
+                    type="button"
+                    class="btn auth-tab secondary"
+                >
+                    S’inscrire
+                </button>
+
+            </div>
+
+            <form id="loginForm">
+
+                <h1 id="authHeading">
+                    Connexion professionnelle
+                </h1>
+
+                <p id="authIntro" class="muted">
+                    Connectez-vous à votre espace pharmacie.
+                </p>
+
+                <div id="signupFields" class="hidden">
+
+                    <label for="fullName">
+                        Nom et prénom
+                    </label>
+
+                    <input
+                        id="fullName"
+                        class="field"
+                        type="text"
+                        placeholder="Nom et prénom"
+                        autocomplete="name"
+                    >
+
+                    <label for="professionalRole">
+                        Fonction
+                    </label>
+
+                    <input
+                        id="professionalRole"
+                        class="field"
+                        type="text"
+                        placeholder="Pharmacien, propriétaire, responsable..."
+                    >
+
+                </div>
+
+                <label for="email">
+                    Email professionnel
+                </label>
+
+                <input
+                    id="email"
+                    class="field"
+                    type="email"
+                    placeholder="Email professionnel"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="password">
+                    Mot de passe
+                </label>
+
+                <input
+                    id="password"
+                    class="field"
+                    type="password"
+                    minlength="8"
+                    placeholder="Mot de passe — 8 caractères minimum"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <div id="confirmPasswordBlock" class="hidden">
+
+                    <label for="confirmPassword">
+                        Confirmer le mot de passe
+                    </label>
+
+                    <input
+                        id="confirmPassword"
+                        class="field"
+                        type="password"
+                        minlength="8"
+                        placeholder="Confirmer le mot de passe"
+                        autocomplete="new-password"
+                    >
+
+                </div>
+
+                <button
+                    id="authSubmit"
+                    type="submit"
+                    class="btn primary full"
+                >
+                    Se connecter
+                </button>
+
+                <button
+                    id="resendConfirmation"
+                    type="button"
+                    class="link-button hidden"
+                >
+                    Renvoyer l’email de confirmation
+                </button>
+
+                <div id="loginMsg"></div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- ================================================== -->
+    <!-- ENREGISTREMENT DE LA PHARMACIE -->
+    <!-- ================================================== -->
+
+    <section id="onboarding" class="container hidden">
+
+        <div class="page-heading">
+
+            <span class="eyebrow">
+                ESPACE PROFESSIONNEL
+            </span>
+
+            <h1>
+                Enregistrer ma pharmacie
+            </h1>
+
+            <p>
+                Renseignez les informations professionnelles de la pharmacie.
+                La pharmacie restera invisible sur PharmaSearch jusqu’à sa
+                vérification.
+            </p>
+
+        </div>
+
+        <form id="pharmacyForm" class="card onboarding-card">
+
+            <div class="form-grid">
+
+                <div>
+                    <label for="pharmacyName">
+                        Nom de la pharmacie *
+                    </label>
+
+                    <input
+                        id="pharmacyName"
+                        class="field"
+                        name="name"
+                        type="text"
+                        placeholder="Ex. Pharmacie Ennasr"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="licenseNumber">
+                        Numéro de licence *
+                    </label>
+
+                    <input
+                        id="licenseNumber"
+                        class="field"
+                        name="license_number"
+                        type="text"
+                        placeholder="Numéro de licence"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="pharmacyPhone">
+                        Téléphone professionnel *
+                    </label>
+
+                    <input
+                        id="pharmacyPhone"
+                        class="field"
+                        name="phone"
+                        type="tel"
+                        placeholder="+216 ..."
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="pharmacyEmail">
+                        Email professionnel
+                    </label>
+
+                    <input
+                        id="pharmacyEmail"
+                        class="field"
+                        name="email"
+                        type="email"
+                        placeholder="pharmacie@email.com"
+                    >
+                </div>
+
+                <div>
+                    <label for="pharmacyAddress">
+                        Adresse *
+                    </label>
+
+                    <input
+                        id="pharmacyAddress"
+                        class="field"
+                        name="address"
+                        type="text"
+                        placeholder="Adresse"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="pharmacyCity">
+                        Ville *
+                    </label>
+
+                    <input
+                        id="pharmacyCity"
+                        class="field"
+                        name="city"
+                        type="text"
+                        placeholder="Ville"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="pharmacyGovernorate">
+                        Gouvernorat *
+                    </label>
+
+                    <input
+                        id="pharmacyGovernorate"
+                        class="field"
+                        name="governorate"
+                        type="text"
+                        placeholder="Gouvernorat"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="postalCode">
+                        Code postal
+                    </label>
+
+                    <input
+                        id="postalCode"
+                        class="field"
+                        name="postal_code"
+                        type="text"
+                        placeholder="Code postal"
+                    >
+                </div>
+
+            </div>
+
+            <label class="checkbox-line">
+
+                <input
+                    id="professionalDeclaration"
+                    type="checkbox"
+                    required
+                >
+
+                <span>
+                    Je certifie être autorisé(e) à administrer cette pharmacie
+                    et accepte la vérification des informations transmises.
+                </span>
+
+            </label>
+
+            <button
+                type="submit"
+                class="btn primary full"
+            >
+                Créer mon espace pharmacie
+            </button>
+
+            <div id="pharmacyMsg"></div>
+
+        </form>
+
+    </section>
+
+    <!-- ================================================== -->
+    <!-- TABLEAU DE BORD -->
+    <!-- ================================================== -->
+
+    <section id="dashboard" class="container hidden">
+
+        <div class="dashboard-heading">
+
+            <div>
+                <span class="eyebrow">
+                    LOGICIEL PHARMACIE
+                </span>
+
+                <h1 id="pharmacyTitle">
+                    Gestion de la pharmacie
+                </h1>
+
+                <div id="verificationStatus"></div>
+            </div>
+
+        </div>
+
+        <nav class="dashboard-tabs">
+
+            <button type="button" class="btn primary">
+                Stocks
+            </button>
+
+            <button type="button" class="btn secondary">
+                Mouvements
+            </button>
+
+            <button type="button" class="btn secondary">
+                Inventaires
+            </button>
+
+            <button type="button" class="btn secondary">
+                Fournisseurs
+            </button>
+
+            <button type="button" class="btn secondary">
+                Commandes
+            </button>
+
+            <button type="button" class="btn secondary">
+                Assistant IA
+            </button>
+
+        </nav>
+
+        <div class="stats">
+
+            <article class="card">
+                <span>Lots enregistrés</span>
+                <strong id="lots">0</strong>
+            </article>
+
+            <article class="card">
+                <span>Stocks faibles</span>
+                <strong id="low">0</strong>
+            </article>
+
+            <article class="card">
+                <span>Péremptions sous 90 jours</span>
+                <strong id="exp">0</strong>
+            </article>
+
+            <article class="card">
+                <span>Médicaments différents</span>
+                <strong id="products">0</strong>
+            </article>
+
+        </div>
+
+        <div id="dashMsg"></div>
+
+        <div class="dashboard-grid">
+
+            <!-- LISTE DU STOCK -->
+
+            <section class="card stock-table-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Stock actuel</h2>
+
+                        <p>
+                            Lots, quantités, seuils et dates de péremption.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                        <tr>
+                            <th>Médicament</th>
+                            <th>Lot</th>
+                            <th>Quantité</th>
+                            <th>Seuil</th>
+                            <th>Péremption</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="stockBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- AJOUT D’UN LOT -->
+
+            <aside class="right-column">
+
+                <form id="stockForm" class="card">
+
+                    <h2>Ajouter un lot</h2>
+
+                    <label for="medicineSelect">
+                        Médicament *
+                    </label>
+
+                    <select
+                        id="medicineSelect"
+                        class="field"
+                        name="medicine_id"
+                        required
+                    >
+                        <option value="">
+                            Choisir un médicament
+                        </option>
+
+                        <option value="OTHER">
+                            ＋ Autre — Ajouter un médicament
+                        </option>
+                    </select>
+
+                    <div id="newMedicine" class="new-medicine hidden">
+
+                        <h3>Nouveau médicament</h3>
+
+                        <label for="commercialName">
+                            Nom commercial *
+                        </label>
+
+                        <input
+                            id="commercialName"
+                            class="field"
+                            name="commercial_name"
+                            type="text"
+                            placeholder="Nom commercial"
+                        >
+
+                        <label for="dci">
+                            DCI / molécule
+                        </label>
+
+                        <input
+                            id="dci"
+                            class="field"
+                            name="dci"
+                            type="text"
+                            placeholder="DCI ou molécule"
+                        >
+
+                        <div class="form-grid">
+
+                            <div>
+                                <label for="dosage">
+                                    Dosage
+                                </label>
+
+                                <input
+                                    id="dosage"
+                                    class="field"
+                                    name="dosage"
+                                    type="text"
+                                    placeholder="Ex. 500 mg"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="medicineForm">
+                                    Forme
+                                </label>
+
+                                <input
+                                    id="medicineForm"
+                                    class="field"
+                                    name="form"
+                                    type="text"
+                                    placeholder="Comprimé, sirop..."
+                                >
+                            </div>
+
+                            <div>
+                                <label for="barcode">
+                                    Code-barres
+                                </label>
+
+                                <input
+                                    id="barcode"
+                                    class="field"
+                                    name="barcode"
+                                    type="text"
+                                    placeholder="Code-barres"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="laboratory">
+                                    Laboratoire
+                                </label>
+
+                                <input
+                                    id="laboratory"
+                                    class="field"
+                                    name="laboratory"
+                                    type="text"
+                                    placeholder="Laboratoire"
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <label for="quantity">
+                        Quantité *
+                    </label>
+
+                    <input
+                        id="quantity"
+                        class="field"
+                        name="quantity"
+                        type="number"
+                        min="0"
+                        placeholder="Quantité"
+                        required
+                    >
+
+                    <label for="batchNumber">
+                        Numéro du lot
+                    </label>
+
+                    <input
+                        id="batchNumber"
+                        class="field"
+                        name="batch_number"
+                        type="text"
+                        placeholder="Numéro du lot"
+                    >
+
+                    <label for="expiryDate">
+                        Date de péremption
+                    </label>
+
+                    <input
+                        id="expiryDate"
+                        class="field"
+                        name="expiry_date"
+                        type="date"
+                    >
+
+                    <label for="lowStockThreshold">
+                        Seuil d’alerte
+                    </label>
+
+                    <input
+                        id="lowStockThreshold"
+                        class="field"
+                        name="low_stock_threshold"
+                        type="number"
+                        min="0"
+                        value="5"
+                    >
+
+                    <button
+                        type="submit"
+                        class="btn primary full"
+                    >
+                        Enregistrer le lot
+                    </button>
+
+                </form>
+
+                <section class="card ai-card">
+
+                    <span class="eyebrow">
+                        PHARMAPULSE
+                    </span>
+
+                    <h2>Assistant intelligent</h2>
+
+                    <p id="aiText">
+                        Analysez les stocks faibles et les lots approchant de
+                        leur date de péremption.
+                    </p>
+
+                    <button
+                        id="analyze"
+                        type="button"
+                        class="btn primary full"
+                    >
+                        Analyser maintenant
+                    </button>
+
+                </section>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

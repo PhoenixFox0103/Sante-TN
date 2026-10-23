@@ -1,0 +1,217 @@
+*{box-sizing:border-box}:root{--g:#047857;--gd:#064e3b;--r:#dc2626;--n:#0f172a;--s:#64748b;--b:#dbe4e8;--bg:#f4f7f6}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--n)}button,input,select,textarea{font:inherit}.page{display:none}.page.active{display:block}.hidden{display:none!important}header{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:#fff;border-bottom:1px solid var(--b);position:sticky;top:0;z-index:50}.brand{display:flex;align-items:center;gap:8px;border:0;background:none;color:var(--gd);font-size:21px;font-weight:900}.brand span{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:var(--g);color:#fff;font-size:28px}.brand b,.red{color:var(--r)}nav{display:flex}nav button,#menu{border:0;background:none;padding:11px;font-weight:700;cursor:pointer}#menu{display:none;font-size:24px}.hero{padding:80px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#052e2b,var(--g),#0f766e)}.hero small,.heading small{color:#34d399;font-weight:900;letter-spacing:.08em}.hero h1{font-size:clamp(42px,6vw,70px);line-height:1.04;margin:18px}.hero h1 em{display:block;color:#a7f3d0;font-style:normal}.search{display:grid;grid-template-columns:1fr 220px auto;gap:8px;max-width:900px;margin:28px auto 0}.search input,.panel input,.panel select,.panel textarea{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:11px}.search button,.panel button{border:0;border-radius:11px;padding:13px 17px;background:var(--g);color:#fff;font-weight:800}.container{width:min(1200px,calc(100% - 30px));margin:auto;padding:42px 0}.panel,.list article,.grid article{padding:21px;border:1px solid var(--b);border-radius:17px;background:#fff;box-shadow:0 8px 25px #0f172a0d}.heading h1{font-size:38px;margin:7px 0}.heading p,.list p,.grid p{color:var(--s)}.quick,.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.quick button{padding:25px;border:1px solid var(--b);border-radius:17px;background:#fff;font-size:18px;font-weight:800}.list{display:grid;gap:13px;margin-top:18px}.result{display:grid!important;grid-template-columns:1.2fr 1fr auto;align-items:center;gap:16px}.badge{display:inline-block;padding:6px 10px;border-radius:99px;background:#d1fae5;color:var(--gd);font-size:12px;font-weight:800}.badge.low{background:#fef3c7;color:#92400e}.action,.emergency a{display:inline-flex;padding:11px 15px;border-radius:10px;background:var(--g);color:#fff;text-decoration:none;font-weight:800}.map-tools{display:grid;grid-template-columns:auto 1fr 130px auto;gap:8px;margin-top:20px}.map-layout{display:grid;grid-template-columns:1.4fr .8fr;gap:17px;margin-top:17px}#map{height:560px;border-radius:18px;border:1px solid var(--b);z-index:1}.pharmacies{margin:0;max-height:560px;overflow:auto}.pharmacy-card{cursor:pointer}.pharmacy-card:hover{border-color:var(--g)}.distance{color:var(--g);font-weight:800}.selected{margin-top:18px}.search-in{display:grid;grid-template-columns:1fr auto;gap:8px}.columns{display:grid;grid-template-columns:1fr 390px;gap:22px}.panel{display:grid;gap:10px}.news-card a{color:var(--g);font-weight:800}.news-card small{color:var(--s)}.emergency article{text-align:center}.emergency article>b{font-size:45px}.emergency a{font-size:18px}footer{padding:30px 4vw;background:#fff;border-top:1px solid var(--b)}.message{margin:12px 0;padding:13px;border-radius:11px}.error{background:#fee2e2;color:#991b1b}.success{background:#d1fae5;color:#065f46}@media(max-width:850px){.grid,.quick{grid-template-columns:1fr 1fr}.map-layout,.columns{grid-template-columns:1fr}.result{grid-template-columns:1fr}}@media(max-width:700px){#menu{display:block}nav{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:#fff;padding:12px}nav.open{display:flex}.search,.map-tools,.grid,.quick{grid-template-columns:1fr}#map{height:420px}.container{padding:28px 0}}
+.tag{display:inline-flex;padding:5px 9px;border-radius:99px;font-size:11px;font-weight:800}.tag-green{background:#d1fae5;color:#065f46}.tag-gray{background:#e2e8f0;color:#475569}.registered{border-left:4px solid #047857!important}.external{border-left:4px solid #94a3b8!important}.custom-marker{background:transparent;border:0}.pin{display:grid;place-items:center;width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);color:#fff;font-weight:900;box-shadow:0 4px 12px #0004}.pin-green{background:#047857}.pin-gray{background:#64748b}.pin::after{content:"+";transform:rotate(45deg)}.pin{font-size:0}.search-in button:disabled,.search-in input:disabled{opacity:.55;cursor:not-allowed}
+
+.map-heading{max-width:850px}.map-tools{grid-template-columns:1fr 120px auto auto!important}.map-tools #locate{background:#be123c}.map-tools #locate:hover{background:#9f1239}#map{width:100%;height:520px;margin-top:18px;border:1px solid var(--b);border-radius:20px;box-shadow:0 10px 30px #0f172a12}.pharmacy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:16px}.pharmacy-card{display:flex;flex-direction:column;min-height:220px;margin:0!important}.pharmacy-card .card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}.route-button{display:inline-flex;padding:10px 13px;border-radius:10px;background:#be123c;color:#fff!important;text-decoration:none;font-weight:800}.search-stock-button{border:1px solid #047857;border-radius:10px;padding:10px 13px;background:#ecfdf5;color:#065f46;font-weight:800}.selected{border:2px solid #047857!important}.news-hero{padding:42px 0 20px;background:radial-gradient(circle at 90% 15%,#fecdd330,transparent 30%)}.news-hero small{color:#be123c;font-weight:900;letter-spacing:.12em}.news-hero h1{font-size:clamp(42px,6vw,70px);margin:14px 0 8px;letter-spacing:-.05em}.news-hero p{font-size:18px;color:#64748b}.news-search{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:28px}.news-search input{padding:14px;border:1px solid #cbd5e1;border-radius:12px}.news-search button{border:0;border-radius:12px;padding:13px 22px;background:#be123c;color:#fff;font-weight:900}.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:16px}.news-card{min-height:250px;display:flex;flex-direction:column}.news-card h2{font-size:20px;line-height:1.25}.news-card p{flex:1}.news-card a{color:#be123c!important;text-decoration:none;font-weight:900}.news-count{padding:15px;border-radius:12px;background:#d1fae5;color:#065f46}.route-button:hover,.news-card a:hover{text-decoration:underline}@media(max-width:900px){.pharmacy-grid,.news-grid{grid-template-columns:1fr 1fr}.map-tools{grid-template-columns:1fr 120px!important}.map-tools button{width:100%}}@media(max-width:650px){.pharmacy-grid,.news-grid,.map-tools{grid-template-columns:1fr!important}.news-search{grid-template-columns:1fr}#map{height:430px}}
+
+.map-tools{grid-template-columns:220px minmax(260px,1fr) 110px auto auto!important}.map-tools select{padding:13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff}.service-type{display:inline-flex;padding:5px 9px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:11px;font-weight:900;margin-bottom:7px}@media(max-width:1050px){.map-tools{grid-template-columns:1fr 1fr!important}.map-tools #pharmacyCity{grid-column:1/-1}}@media(max-width:650px){.map-tools{grid-template-columns:1fr!important}.map-tools #pharmacyCity{grid-column:auto}}
+
+.map-tools:has(#customHealthService:not(.hidden)){grid-template-columns:210px minmax(210px,.65fr) minmax(250px,1fr) 100px auto auto!important}.medicine-dialog{width:min(620px,calc(100% - 28px));padding:0;border:0;border-radius:22px;background:transparent}.medicine-dialog::backdrop{background:rgba(15,23,42,.66);backdrop-filter:blur(4px)}.medicine-modal{position:relative;padding:30px;background:#fff;border:1px solid #dbe4e0;border-radius:22px;box-shadow:0 30px 80px rgba(15,23,42,.35)}.modal-close{position:absolute;right:14px;top:14px;width:38px;height:38px;border:0;border-radius:50%;background:#f1f5f9;color:#334155;font-size:25px;cursor:pointer}.modal-kicker{display:block;color:#047857;font-size:11px;font-weight:900;letter-spacing:.12em;margin-bottom:10px}.medicine-modal h2{margin:0 46px 7px 0;font-size:27px}.medicine-modal>p{color:#64748b}.medicine-modal .search-in{display:grid;grid-template-columns:1fr auto;gap:9px;margin:20px 0 12px}.medicine-modal .search-in input{padding:14px;border:1px solid #cbd5e1;border-radius:11px}.medicine-modal .search-in button{padding:12px 18px;border:0;border-radius:11px;background:#047857;color:#fff;font-weight:900}.modal-note{font-size:11px;margin:16px 0 0}.medicine-dialog[open]{animation:modalIn .18s ease-out}@keyframes modalIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}@media(max-width:1050px){.map-tools:has(#customHealthService:not(.hidden)){grid-template-columns:1fr 1fr!important}}@media(max-width:650px){.medicine-modal{padding:24px 18px}.medicine-modal .search-in{grid-template-columns:1fr}.map-tools:has(#customHealthService:not(.hidden)){grid-template-columns:1fr!important}}
+
+.service-combobox{min-width:0}.service-combobox input{width:100%;box-sizing:border-box;padding:13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff}.service-combobox input:focus{outline:2px solid #10b98133;border-color:#059669}.map-tools{grid-template-columns:minmax(220px,280px) minmax(260px,1fr) 110px auto auto!important}@media(max-width:1050px){.map-tools{grid-template-columns:1fr 1fr!important}.service-combobox,#pharmacyCity{grid-column:auto!important}}@media(max-width:650px){.map-tools{grid-template-columns:1fr!important}}
+
+.medicine-page{max-width:1100px}.medicine-hero{padding:20px 0 26px}.medicine-hero small{color:#047857;font-size:11px;font-weight:900;letter-spacing:.12em}.medicine-hero h1{max-width:780px;margin:10px 0;font-size:clamp(38px,5vw,60px);line-height:1.06;letter-spacing:-.045em}.medicine-hero p{max-width:760px;color:#64748b;font-size:16px;line-height:1.7}.medicine-search-panel{display:grid;grid-template-columns:minmax(280px,1fr) minmax(220px,.65fr) auto;gap:12px;align-items:end;padding:18px;border:1px solid #dbe4e8;border-radius:18px;background:#fff;box-shadow:0 12px 35px #0f172a0d}.medicine-search-panel label{display:block;margin:0 0 6px;color:#334155;font-size:12px;font-weight:900}.medicine-search-panel input{width:100%;padding:13px 14px;border:1px solid #cbd5e1;border-radius:11px}.medicine-search-panel button{height:47px;padding:0 22px;border:0;border-radius:11px;background:#047857;color:#fff;font-weight:900}.medicine-info{margin:14px 0 20px;padding:13px 15px;border-radius:12px;background:#eff6ff;color:#1e40af}.medicine-summary{margin:15px 0;padding:15px;border-radius:12px;background:#d1fae5;color:#065f46;font-weight:800}.medicine-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.medicine-result-card{display:flex;flex-direction:column;min-height:270px;padding:22px;border:1px solid #dbe4e8;border-radius:18px;background:#fff;box-shadow:0 9px 28px #0f172a0c}.medicine-result-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.medicine-result-card h2{margin:0;font-size:21px}.medicine-result-card h3{margin:17px 0 5px;color:#064e3b}.medicine-details,.pharmacy-location{color:#64748b}.updated-time{margin-top:8px;color:#94a3b8;font-size:11px}.medicine-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:18px}.medicine-route,.medicine-call{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:10px;text-decoration:none;font-weight:900}.medicine-route{background:#be123c;color:#fff}.medicine-call{background:#ecfdf5;color:#065f46;border:1px solid #6ee7b7}.availability-pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:#d1fae5;color:#065f46;font-size:11px;font-weight:900}.availability-pill.limited{background:#fef3c7;color:#92400e}.empty-medicine{grid-column:1/-1;padding:35px;border:1px dashed #cbd5e1;border-radius:16px;background:#fff;text-align:center;color:#64748b}@media(max-width:760px){.medicine-search-panel,.medicine-results{grid-template-columns:1fr}.medicine-search-panel button{width:100%}.medicine-hero h1{font-size:38px}}
+
+.optional-label{display:inline-flex;margin-left:6px;padding:3px 7px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:10px;font-weight:900}.medicine-scope{margin:15px 0;padding:15px;border-radius:12px;background:#d1fae5;color:#065f46;font-weight:800}
+
+/* Accueil PharmaSearch TN - V22 */
+.welcome-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:56px;align-items:center;min-height:620px;padding:80px max(6vw,40px);background:radial-gradient(circle at 80% 18%,rgba(52,211,153,.22),transparent 28%),linear-gradient(125deg,#033f35 0%,#056b57 52%,#0b8b70 100%);color:#fff}
+.welcome-content{max-width:780px}.welcome-badge{display:inline-flex;padding:8px 12px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.09);color:#a7f3d0;font-size:11px;font-weight:900;letter-spacing:.12em}.welcome-content h1{margin:22px 0 18px;font-size:clamp(46px,6vw,78px);line-height:1.02;letter-spacing:-.055em;color:#fff}.welcome-lead{max-width:720px;margin:0;color:#d1fae5;font-size:18px;line-height:1.7}.welcome-actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 18px}.welcome-actions button{padding:15px 20px;border-radius:12px;font-weight:900;cursor:pointer}.welcome-primary{border:0;background:#fff;color:#065f46}.welcome-secondary{border:1px solid rgba(255,255,255,.42);background:transparent;color:#fff}.welcome-note{max-width:650px;color:#a7f3d0;font-size:12px}.welcome-panel{display:grid;gap:12px;padding:16px;border:1px solid rgba(255,255,255,.18);border-radius:24px;background:rgba(255,255,255,.1);box-shadow:0 28px 70px rgba(0,0,0,.18);backdrop-filter:blur(12px)}.welcome-panel article{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;padding:17px;border-radius:16px;background:rgba(255,255,255,.94);color:#0f172a}.welcome-panel article>span{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#ecfdf5;font-size:24px}.welcome-panel h2{margin:0 0 4px;font-size:17px}.welcome-panel p{margin:0;color:#64748b;font-size:12px;line-height:1.5}.home-shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding-top:28px;padding-bottom:46px}.home-shortcuts button{display:grid;gap:5px;padding:20px;text-align:left;border:1px solid #dbe4e8;border-radius:16px;background:#fff;cursor:pointer;transition:.18s ease}.home-shortcuts button:hover{transform:translateY(-3px);border-color:#10b981;box-shadow:0 14px 32px rgba(15,23,42,.1)}.home-shortcuts span{color:#059669;font-size:11px;font-weight:900}.home-shortcuts b{font-size:16px;color:#0f172a}.home-shortcuts small{color:#64748b}
+@media(max-width:950px){.welcome-hero{grid-template-columns:1fr;padding:60px 28px}.welcome-panel{grid-template-columns:1fr 1fr}.home-shortcuts{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.welcome-hero{padding:48px 18px;min-height:auto}.welcome-content h1{font-size:43px}.welcome-panel,.home-shortcuts{grid-template-columns:1fr}.welcome-actions{display:grid}.welcome-actions button{width:100%}}
+
+/* ===== SAHALINK TN V23 — accueil refondu ===== */
+header{height:78px!important;padding:0 max(4vw,28px)!important;box-shadow:0 1px 0 rgba(15,23,42,.08)!important}.brand{gap:11px!important;text-align:left!important}.brand>img{width:48px!important;height:48px!important;object-fit:cover!important;border-radius:13px!important;box-shadow:0 8px 22px rgba(4,120,87,.18)!important}.brand-copy{display:grid!important;grid-template-columns:auto auto!important;column-gap:5px!important;align-items:end!important}.brand-copy strong{font-size:20px!important;color:#064e3b!important}.brand-copy b{font-size:17px!important;color:#dc2626!important}.brand-copy small{grid-column:1/-1!important;color:#64748b!important;font-size:9px!important;font-weight:700!important;letter-spacing:.04em!important}.sl-hero{display:grid!important;grid-template-columns:minmax(0,1.08fr) minmax(380px,.92fr)!important;align-items:center!important;gap:56px!important;min-height:620px!important;padding:72px max(7vw,42px)!important;background:radial-gradient(circle at 78% 20%,rgba(16,185,129,.24),transparent 26%),linear-gradient(125deg,#033f35 0%,#065f46 48%,#0f8a70 100%)!important;color:#fff!important}.sl-hero-copy{max-width:750px!important}.sl-eyebrow{display:inline-flex!important;padding:7px 11px!important;border-radius:999px!important;background:rgba(255,255,255,.1)!important;border:1px solid rgba(255,255,255,.2)!important;color:#a7f3d0!important;font-size:11px!important;font-weight:900!important;letter-spacing:.12em!important}.sl-hero h1{margin:20px 0 18px!important;color:#fff!important;font-size:clamp(50px,6vw,82px)!important;line-height:.98!important;letter-spacing:-.055em!important}.sl-hero h1 em{display:block!important;color:#a7f3d0!important;font-style:normal!important}.sl-hero-copy>p{max-width:700px!important;margin:0!important;color:#d1fae5!important;font-size:18px!important;line-height:1.7!important}.sl-actions{display:flex!important;flex-wrap:wrap!important;gap:12px!important;margin:30px 0 18px!important}.sl-actions button{padding:15px 20px!important;border-radius:12px!important;font-weight:900!important;cursor:pointer!important}.sl-primary{border:0!important;background:#fff!important;color:#065f46!important}.sl-light{border:1px solid rgba(255,255,255,.45)!important;background:rgba(255,255,255,.08)!important;color:#fff!important}.sl-trust{display:flex!important;flex-wrap:wrap!important;gap:15px!important;color:#a7f3d0!important;font-size:12px!important}.sl-hero-visual{position:relative!important;min-height:430px!important;display:grid!important;place-items:center!important}.sl-logo-halo{display:grid!important;place-items:center!important;width:min(360px,80vw)!important;aspect-ratio:1!important;border-radius:50%!important;background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,.04) 55%,transparent 56%)!important;border:1px solid rgba(167,243,208,.12)!important}.sl-logo-halo img{width:72%!important;height:72%!important;object-fit:cover!important;border-radius:28px!important;box-shadow:0 25px 70px rgba(0,0,0,.22)!important}.sl-float{position:absolute!important;display:grid!important;gap:3px!important;min-width:190px!important;padding:13px 15px!important;border-radius:14px!important;background:#fff!important;color:#0f172a!important;box-shadow:0 18px 45px rgba(0,0,0,.2)!important}.sl-float small{color:#64748b!important}.sl-float-a{left:0!important;top:70px!important}.sl-float-b{right:0!important;bottom:55px!important}.sl-services{padding-top:70px!important;padding-bottom:70px!important}.sl-section-head{max-width:680px!important;margin:0 auto 34px!important;text-align:center!important}.sl-section-head span{color:#059669!important;font-size:11px!important;font-weight:900!important;letter-spacing:.14em!important}.sl-section-head h2{margin:9px 0!important;color:#0f172a!important;font-size:clamp(32px,4vw,48px)!important;letter-spacing:-.035em!important}.sl-section-head p{margin:0!important;color:#64748b!important;line-height:1.6!important}.sl-service-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}.sl-service-grid button{display:block!important;padding:26px!important;text-align:left!important;border:1px solid #dbe4e8!important;border-radius:20px!important;background:#fff!important;box-shadow:0 10px 32px rgba(15,23,42,.06)!important;cursor:pointer!important;transition:.2s ease!important}.sl-service-grid button:hover{transform:translateY(-5px)!important;border-color:#6ee7b7!important;box-shadow:0 18px 40px rgba(15,23,42,.11)!important}.sl-service-grid i{display:grid!important;place-items:center!important;width:52px!important;height:52px!important;border-radius:16px!important;font-style:normal!important;font-size:24px!important}.sl-service-grid .mint{background:#d1fae5!important}.sl-service-grid .blue{background:#dbeafe!important}.sl-service-grid .amber{background:#fef3c7!important}.sl-service-grid .rose{background:#fee2e2!important}.sl-service-grid h3{margin:18px 0 8px!important;font-size:20px!important}.sl-service-grid p{min-height:76px!important;margin:0 0 18px!important;color:#64748b!important;line-height:1.55!important}.sl-service-grid b{color:#047857!important;font-size:13px!important}.sl-solidarity{padding:72px 0!important;background:linear-gradient(135deg,#052e2b,#064e3b)!important}.sl-section-head.light h2{color:#fff!important}.sl-section-head.light p{color:#a7f3d0!important}.sl-solidarity-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:15px!important}.sl-solidarity-grid article{padding:24px!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:18px!important;background:rgba(255,255,255,.08)!important;color:#fff!important}.sl-solidarity-grid h3{margin:15px 0 7px!important}.sl-solidarity-grid p{margin:0!important;color:#d1fae5!important;line-height:1.5!important}.sl-solid-icon{display:grid!important;place-items:center!important;width:48px!important;height:48px!important;border-radius:15px!important;background:#fff!important;font-size:20px!important;font-weight:900!important}.sl-solid-icon.blood{color:#dc2626!important}.sl-solid-icon.oxygen{color:#0284c7!important}.sl-solid-icon.equipment{color:#059669!important}.sl-solid-icon.other{color:#7c3aed!important}.sl-solidarity-cta{display:block!important;margin:30px auto 0!important;padding:14px 20px!important;border:0!important;border-radius:12px!important;background:#fff!important;color:#065f46!important;font-weight:900!important;cursor:pointer!important}.sl-responsible{padding-top:32px!important;padding-bottom:42px!important}.sl-responsible>div{display:flex!important;align-items:center!important;gap:14px!important;padding:20px!important;border-radius:16px!important;background:#ecfdf5!important;border:1px solid #a7f3d0!important}.sl-responsible span{font-size:28px!important}.sl-responsible p{margin:0!important;color:#065f46!important;line-height:1.5!important}footer b{color:#064e3b!important}
+@media(max-width:1000px){.sl-hero{grid-template-columns:1fr!important}.sl-hero-visual{min-height:360px!important}.sl-service-grid,.sl-solidarity-grid{grid-template-columns:1fr 1fr!important}}
+@media(max-width:650px){header{height:70px!important;padding:0 14px!important}.brand-copy small{display:none!important}.sl-hero{padding:52px 20px!important;min-height:auto!important}.sl-hero h1{font-size:46px!important}.sl-hero-visual{display:none!important}.sl-actions{display:grid!important}.sl-actions button{width:100%!important}.sl-service-grid,.sl-solidarity-grid{grid-template-columns:1fr!important}.sl-service-grid p{min-height:auto!important}}
+/* Logo principal plus grand */
+.sl-logo-halo {
+  width: min(470px, 88vw) !important;
+}
+
+.sl-logo-halo img {
+  width: 86% !important;
+  height: 86% !important;
+  object-fit: cover !important;
+  border-radius: 34px !important;
+}
+
+/* Centrer le logo après suppression des carreaux */
+.sl-hero-visual {
+  min-height: 500px !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+/* En-tête plus grand et plus lisible */
+header {
+  height: 96px !important;
+}
+
+.brand {
+  gap: 16px !important;
+}
+
+.brand > img {
+  width: 68px !important;
+  height: 68px !important;
+  border-radius: 17px !important;
+  object-fit: cover !important;
+}
+
+.brand-copy {
+  column-gap: 8px !important;
+}
+
+.brand-copy strong {
+  font-size: 30px !important;
+  line-height: 1 !important;
+}
+
+.brand-copy b {
+  font-size: 25px !important;
+  line-height: 1 !important;
+}
+
+.brand-copy small {
+  margin-top: 5px !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.03em !important;
+}
+
+@media (max-width: 650px) {
+  header {
+    height: 78px !important;
+  }
+
+  .brand > img {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .brand-copy strong {
+    font-size: 23px !important;
+  }
+
+  .brand-copy b {
+    font-size: 20px !important;
+  }
+
+  .brand-copy small {
+    display: none !important;
+  }
+}
+
+/* ===== EN-TÊTE SAHALINK SANS DOUBLE CARRE ===== */
+
+header {
+  height: 92px !important;
+  padding: 0 max(4vw, 30px) !important;
+}
+
+.brand-clean {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  cursor: pointer !important;
+}
+
+/* Logo plus grand, sans cadre CSS supplémentaire */
+.brand-clean .brand-logo {
+  display: block !important;
+
+  width: 70px !important;
+  height: 70px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  object-fit: contain !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Nom sur une seule ligne */
+.brand-clean .brand-name {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 7px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  white-space: nowrap !important;
+}
+
+.brand-clean .brand-name strong {
+  color: #064e3b !important;
+  font-size: 31px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.brand-clean .brand-name b {
+  color: #dc2626 !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+}
+
+/* Ne plus appliquer l'ancien style carré de .brand span */
+.brand-clean > span {
+  width: auto !important;
+  height: auto !important;
+
+  display: flex !important;
+
+  color: inherit !important;
+  background: transparent !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+}
+
+@media (max-width: 650px) {
+  header {
+    height: 76px !important;
+    padding: 0 14px !important;
+  }
+
+  .brand-clean {
+    gap: 10px !important;
+  }
+
+  .brand-clean .brand-logo {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .brand-clean .brand-name strong {
+    font-size: 23px !important;
+  }
+
+  .brand-clean .brand-name b {
+    font-size: 18px !important;
+  }
+}
